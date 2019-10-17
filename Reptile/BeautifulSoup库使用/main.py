@@ -23,8 +23,7 @@ html = '''
                                class="text"
                                aria-label="搜索"/>
                         <button clstag="h|keycount|head|search_a" onclick="search('key');return false;" class="button" aria-label="搜索">
-                            <i
-                                    class="iconfont">&#xe60b;</i></button>
+                            <i class="iconfont">&#xe60b;</i></button>
                     </div>
 '''
 soup = BeautifulSoup(html,'lxml')
