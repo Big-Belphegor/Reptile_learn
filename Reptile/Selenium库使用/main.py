@@ -184,33 +184,41 @@
 
 #-------------------------------------
 
+# #元素等待
+
+#隐式等待，用于当WebDriver没有在DOM中找到元素时，继续等待，当超出设定时间后再抛出异常。
+from selenium import webdriver
+browser = webdriver.Chrome()
+#隐式等待方法，此处等待10s，默认为0s
+browser.implicitly_wait(10)
+browser.get('https://www.zhihu.com/explore')
+input = browser.find_element_by_class_name('zu-top-add-question')
+print(input)
+
+#-------------------------------------
+
 # #登入天猫帐户
 
-from selenium import webdriver
-from selenium.webdriver import ActionChains
-import time
-#-----实例化一个Chrome
-browser = webdriver.Chrome()
-browser.implicitly_wait(3)
-browser.get('https://tmall.com')
-#-----切换至登入页面
-button_login_info = browser.find_element_by_id('login-info')
-button_login_info.click()
-time.sleep(3)
-#-----使用用户名密码的方式登入
-browser.switch_to.frame('J_loginIframe')
-js = "document.getElementById('J_Quick2Static').click()"
-browser.execute_script(js)
-browser.find_element_by_id('TPL_username_1').send_keys('南宫轩言0')
-browser.find_element_by_id('TPL_password_1').send_keys('service123')
-#-----验证
-start = browser.find_element_by_id('nc_1_n1z')
-actions = ActionChains(browser)
-actions.perform()
-
-# js = "document.documentElement.scrollTop=298"
-# browser.execute_script('window.scrollTo(0,document.body.scrollHeight)')
-# browser.execute_script('alert("To Bottom")')
-
-#登入
+# from selenium import webdriver
+# from selenium.webdriver import ActionChains
+# import time
+# #-----实例化一个Chrome
+# browser = webdriver.Chrome()
+# browser.implicitly_wait(3)
+# browser.get('https://tmall.com')
+# #-----切换至登入页面
+# button_login_info = browser.find_element_by_id('login-info')
+# button_login_info.click()
+# time.sleep(3)
+# #-----使用用户名密码的方式登入
+# browser.switch_to.frame('J_loginIframe')
+# js = "document.getElementById('J_Quick2Static').click()"
+# browser.execute_script(js)
+# browser.find_element_by_id('TPL_username_1').send_keys('南宫轩言0')
+# browser.find_element_by_id('TPL_password_1').send_keys('service123')
+# #-----验证(验证部分存在问题，待解决)
+# start = browser.find_element_by_id('nc_1_n1z')
+# actions = ActionChains(browser)
+# actions.perform()
+# #-----登入
 # browser.find_element_by_id('J_SubmitStatic').click()
