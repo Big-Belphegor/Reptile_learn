@@ -61,8 +61,8 @@
 
 #----------------------------------------------
 
-# #cookie相关
-# import http.cookiejar,urllib.request
+#cookie相关
+import http.cookiejar,urllib.request
 # #声明cookie对象
 # cookie = http.cookiejar.CookieJar()
 # #处理cookie
@@ -89,7 +89,13 @@
 # opener = urllib.request.build_opener(handler)
 # response = opener.open('http://www.baidu.com')
 # print(response.read().decode('utf-8'))
-
+#或使用下面方法
+# cookiejar = http.cookiejar.MozillaCookieJar()
+# cookiejar.load('cookie.txt')
+# handler = urllib.request.HTTPCookieProcessor(cookiejar)
+# opener = urllib.request.build_opener(handler)
+# response = opener.open('http://wwww.baidu.com')
+# print(response.read().decode('utf-8'))
 #----------------------------------------------
 
 # #异常处理
@@ -99,7 +105,8 @@
 #     response = request.urlopen('http://cuiqingcai.com/index.html')
 # except error.URLError as e:
 #     print(e.reason)
-# #页面提示Not Found时调用HTTPError的异常处理
+#
+# # #页面提示Not Found时调用HTTPError的异常处理
 # from urllib import request,error
 # try:
 #     response = request.urlopen('http://cuiqingcai.com/index.html')
@@ -152,5 +159,5 @@
 
 #----------------------------------------------
 
-import urllib.robotparser
+# import urllib.robotparser
 # <"详细查看官网">

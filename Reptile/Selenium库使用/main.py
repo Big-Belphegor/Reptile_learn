@@ -58,7 +58,7 @@
 #-------------------------------------
 
 # #查找元素
-
+#
 # #单个元素
 # from selenium import webdriver
 # browser = webdriver.Chrome()
@@ -76,7 +76,7 @@
 # browser.find_element_by_tag_name()
 # browser.find_element_by_class_name()
 # browser.find_element_by_css_selector()
-
+#
 # #通用搜索，直接全局查找'find_element'，然后在后面匹配查找类型及关键字，就是By.ID/name/xpath等
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
@@ -85,7 +85,7 @@
 # input_first = browser.find_element(By.ID,'q')
 # print(input_first)
 # browser.close()
-
+#
 # #多个元素
 # from selenium import webdriver
 #
@@ -185,7 +185,7 @@
 #-------------------------------------
 
 # #元素等待
-
+#
 # #隐式等待，当WebDriver没有在DOM中找到元素时会继续等待，当超出设定时间后再抛出异常。
 # from selenium import webdriver
 # browser = webdriver.Chrome()
@@ -194,7 +194,7 @@
 # browser.get('https://www.zhihu.com/explore')
 # input = browser.find_element_by_class_name('zu-top-add-question')
 # print(input)
-
+#
 # #显示等待，当某个条件成立才去获取元素，也可以设置最大等待时间，超出后才会抛出异常。
 # from selenium import webdriver
 # from selenium.webdriver.common.by import By
@@ -207,7 +207,7 @@
 # input = wait.until(EC.presence_of_element_located((By.ID,'q')))
 # button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,'.btn-search')))
 # print(input,button)
-
+#
 # title_is                        #标题是内容
 # title_contains                  #标题包含某内容
 # presence_of_element_located     #元素加载处，传入定位元组，如(By.ID,'q')
@@ -273,7 +273,7 @@
 #-------------------------------------
 
 # #Cookies
-
+#
 # from selenium import webdriver
 # browser = webdriver.Chrome()
 # browser.get('https://www.zhihu.com/explore')
@@ -286,7 +286,7 @@
 #-------------------------------------
 
 # #选项卡管理
-
+#
 # import time
 # from selenium import webdriver
 #

@@ -30,38 +30,38 @@
 #---------------------------------------------
 
 #查找元素
-# html = '''
-# <div>
-#   <ul class='list'>
-#     <li class='item-0'>frist item</li>
-#     <li class='item-1'><a href="link2.html">second item</a></li>
-#     <li class='item-0 active'><a href="link3.html"><span class="bold">third item</span></a></li>
-#     <li class='item-1 active'><a href="link4.html">fourth item</a></li>
-#     <li class='item-0'><a href="link5.html">fifth item</a></li>
-#   </ul>
-# </div>
-# '''
+html = '''
+<div>
+  <ul class='list'>
+    <li class='item-0'>frist item</li>
+    <li class='item-1'><a href="link2.html">second item</a></li>
+    <li class='item-0 active'><a href="link3.html"><span class="bold">third item</span></a></li>
+    <li class='item-1 active'><a href="link4.html">fourth item</a></li>
+    <li class='item-0'><a href="link5.html">fifth item</a></li>
+  </ul>
+</div>
+'''
 
-# #查找任意元素
-# from pyquery import PyQuery as pq
-# #--首先初始化，查询list类下的标签
-# doc = pq(html)
-# ltems = doc('.list')
-# print(type(ltems))
-# print(ltems)
-# #--然后对生成的实例进行查找操作
-# #--查找'li'标签
-# lis = ltems.find('li')
-# #--查找'li'下的'a'标签
-# lis2 = ltems.find('li').find('a')
-# print(type(lis))
-# print(lis)
-# print(lis2)
+#查找任意元素
+from pyquery import PyQuery as pq
+#--首先初始化，查询list类下的标签
+doc = pq(html)
+ltems = doc('.list')
+print(type(ltems))
+print(ltems)
+#--然后对生成的实例进行查找操作
+#--查找'li'标签
+lis = ltems.find('li')
+#--查找'li'下的'a'标签
+lis2 = ltems.find('li').find('a')
+print(type(lis))
+print(lis)
+print(lis2)
 
-# #查找子元素
-# #--查找ltems的子元素中包含active的标签
-# lis3 = ltems.children('.active')
-# print(lis3)
+#查找子元素
+#--查找ltems的子元素中包含active的标签
+lis3 = ltems.children('.active')
+print(lis3)
 
 #---------------------------------------------
 
@@ -77,7 +77,7 @@
 #   </ul>
 # </div>
 # '''
-
+#
 # from pyquery import PyQuery as pq
 # doc = pq(html)
 # ltems = doc('.list')
@@ -219,7 +219,7 @@
 # print(li_4)
 # #修改样式属性
 # li_5 = li.css('font-size','16px')
-
+#
 # #移除标签
 # html = '''
 # <div class="test">
